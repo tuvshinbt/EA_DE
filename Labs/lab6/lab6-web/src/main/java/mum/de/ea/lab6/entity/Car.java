@@ -13,12 +13,14 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author tuvshuu
  */
-@Entity(name = "CarTbl")
+@Entity
+@Table(name = "CarTbl")
 public class Car implements Serializable {
 
     @Id

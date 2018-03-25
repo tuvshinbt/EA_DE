@@ -42,7 +42,7 @@ public class CarDAOImpl implements CarDAO {
     @Override
     public List<Car> findAll() {
         open();
-        Query query = em.createQuery("SELECT c FROM CarTbl c");
+        Query query = em.createQuery("SELECT c FROM Car c");
         List<Car> cars = (List<Car>) query.getResultList();
         close();
         return cars;
