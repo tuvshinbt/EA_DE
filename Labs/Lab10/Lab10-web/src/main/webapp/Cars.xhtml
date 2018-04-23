@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Lab10 - Car</title>
+    </h:head>
+    <h:body>
+        <dir>
+            <h1>Car list</h1>
+        </dir>
+        <h:form>
+            <h:dataTable value="#{carsMB.cars}" var="carItem">
+                <f:facet name="header">
+                    <tr>
+                        <td>ID</td>
+                        <td>MAKE</td>
+                        <td>MODEL</td>
+                        <td>MILES</td>
+                        <td>MANU/YEAR</td>
+                        <td>COLOR</td>
+                    </tr>
+                </f:facet>
+                <h:column>
+                    #{carItem.id}
+                </h:column>
+                <h:column>
+                    #{carItem.make}
+                </h:column>
+                <h:column>
+                    #{carItem.model}
+                </h:column>
+                <h:column>
+                    #{carItem.miles}
+                </h:column>
+                <h:column>
+                    #{carItem.year}
+                </h:column>
+                <h:column>
+                    #{carItem.color}
+                </h:column>
+                <h:column>
+                    <h:commandButton value="Update" action="#{carMB.show(carItem.id)}" />
+                </h:column>
+                <h:column>
+                    <h:commandButton value="Delete" action="#{deleteCarMB.show(carItem.id)}" />
+                </h:column>
+            </h:dataTable>
+            <h:commandButton value="Create" action="Car?faces-redirect=true"/>
+        </h:form>
+    </h:body>
+</html>
+
